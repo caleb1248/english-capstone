@@ -4,7 +4,7 @@ import { ContextSnippet, Context, Snippet } from "../components/ContextSnippet";
 export default function Section1() {
   return (
     <section
-      className="flex flex-col gap-10 bg-linear-to-br from-0% to-red-900/60 p-28 pt-14"
+      className="flex min-h-screen flex-col gap-10 bg-linear-to-br from-0% to-red-900/60 p-28 pt-14"
       id="section1"
     >
       <div className="grid grid-cols-2 gap-12">
