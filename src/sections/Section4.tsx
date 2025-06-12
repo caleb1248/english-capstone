@@ -1,7 +1,14 @@
 import { ArrowDown } from "lucide-react";
 import { Context, ContextSnippet, Snippet } from "../components/ContextSnippet";
+import { useState, useEffect } from "react";
 
 export default function Section4() {
+  const [playing, setPlaying] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => playing && setPlaying(false);
+    document.addEventListener("scrollend", handleScroll);
+    return () => document.removeEventListener("scrollend", handleScroll);
+  });
   return (
     <section
       className="flex min-h-screen flex-col gap-10 bg-gradient-to-br from-0% to-orange-700/50 px-28 pt-14 pb-[20rem]"
@@ -49,6 +56,13 @@ export default function Section4() {
           </p>
         </Context>
         <Snippet>
+          <audio
+            src="/rach-trimmed.mp3"
+            autoPlay
+            hidden
+            muted={!playing}
+            ref={() => setPlaying(true)}
+          ></audio>
           <p className="text-[0.95rem]/8">
             He [Ralph] swerved as a spear flew past and then was silent,
             running. All at once the lights flickering ahead of him merged
