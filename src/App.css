@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --accent: var(--color-orange-400);
+}
+
+@theme {
+  --color-accent: var(--accent);
+  --font-sans: Inter, sans-serif;
+  --animate-arrowdown: arrow-down 1s linear infinite;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  pre {
+    font-family: "Times New Roman";
+  }
+
+  button {
+    @apply cursor-pointer focus:outline-none;
+  }
+
+  html,
+  body {
+    @apply min-h-screen bg-neutral-950 font-sans text-xl text-white;
+  }
+
+  .red-accent {
+    @apply text-red-500;
+  }
+
+  .green-accent {
+    @apply font-bold text-green-500;
+  }
+
+  @keyframes arrow-down {
+    0% {
+      transform: translateY(-3px);
+    }
+
+    50% {
+      transform: translateY(3px);
+    }
+
+    100% {
+      transform: translateY(-3px);
+    }
+  }
+}
