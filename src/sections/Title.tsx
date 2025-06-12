@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
 
 const Title: React.FC = () => {
@@ -19,7 +18,7 @@ const Title: React.FC = () => {
       </div>
       <div className="flex justify-center">
         <button
-          className="bg-accent mt-10 flex items-center gap-2 rounded-full px-7 py-2 shadow transition hover:opacity-90 active:translate-y-1"
+          className="bg-accent group mt-10 flex items-center gap-2 rounded-full px-7 py-2 shadow transition hover:opacity-90 active:translate-y-1"
           onClick={() =>
             document
               .getElementById("section1")!
@@ -27,20 +26,9 @@ const Title: React.FC = () => {
           }
         >
           Learn about it
-          <motion.span
-            animate={{
-              y: [-3, 3, -3],
-            }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeIn",
-            }}
-            className="flex items-center"
-          >
+          <span className="not-active:animate-arrowdown flex items-center">
             <ArrowDown />
-          </motion.span>
+          </span>
         </button>
       </div>
     </div>
