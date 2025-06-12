@@ -11,10 +11,11 @@ const Title: React.FC = () => {
         <h1 className="m-0 mb-16 text-center text-7xl font-semibold">
           Why we tell <span className="text-accent">stories</span>
         </h1>
-        <p className="text-center text-xl font-semibold">
+        <p className="mb-4 text-center text-xl font-semibold">
           A story of <span className="text-accent">empathy</span>, emotions, and{" "}
           connections.
         </p>
+        <p className="text-accent text-center font-semibold">By Caleb Liu</p>
       </div>
       <div className="flex justify-center">
         <button
